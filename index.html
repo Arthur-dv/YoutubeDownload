@@ -4,25 +4,52 @@
     <meta charset="UTF-8">
     <title>Baixar Vídeo do YouTube</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+        }
         .container {
             width: 300px;
-            padding: 15px;
-            border: 2px solid #333;
-            border-radius: 8px;
-            background-color: #ff0505;
+            padding: 20px;
+            border-radius: 30px;
+            background-color: #ff0000;
             text-align: center;
+            position: relative;
         }
         input {
             width: 100%;
             padding: 8px;
             margin-top: 10px;
-            margin-left: -10px;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
         }
-        button {
-            margin-top: 10px;
-            padding: 8px;
+        .play-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
-            background-color: white;
+            margin: 15px auto 0;
+            position: relative;
+        }
+        .play-icon::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 20px solid white;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            position: absolute;
         }
     </style>
     <script>
@@ -53,9 +80,9 @@
 </head>
 <body>
     <div class="container">
-        <h2>Baixar Vídeo do YouTube</h2>
+        <h2>Vídeo Downloader</h2>
         <input type="text" id="linkInput" placeholder="Cole o link do vídeo">
-        <button onclick="baixarVideo()">Baixar</button>
+        <div class="play-icon" onclick="baixarVideo()"></div> 
     </div>
 </body>
 </html>
